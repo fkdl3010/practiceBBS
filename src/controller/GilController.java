@@ -7,11 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("*.web")
-public class WebController extends HttpServlet {
+import command.GilCommand;
+import common.PathNRedirect;
+
+@WebServlet("*.gil")
+public class GilController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public WebController() {
+    public GilController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -24,9 +27,23 @@ public class WebController extends HttpServlet {
 		String context = request.getContextPath();
 		String cmd = requestURI.substring(context.length());
 		
+		PathNRedirect pathNRedirect = null;
+		GilCommand command = null;
 		
 		switch(cmd) {
 		
+		// 커맨드
+		case "/GilBBSListPage.gil":
+			
+			break;
+		
+		// 이동
+		}
+		
+		if(pathNRedirect.isRedirect()) {
+			response.sendRedirect(pathNRedirect.getPath());
+		}else {
+			request.getRequestDispatcher(pathNRedirect.getPath()).forward(request, response);
 		}
 		
 	}
