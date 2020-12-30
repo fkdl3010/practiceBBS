@@ -39,3 +39,12 @@ insert into gil values (gil_seq.nextval, '나길동', '질문입니다17.', '왜
 insert into gil values (gil_seq.nextval, '박길동', '질문입니다18.', '왜이리시끄러운것이냐18', '1111', 0, '127.0.0.1', sysdate);
 insert into gil values (gil_seq.nextval, '이길동', '질문입니다19.', '왜이리시끄러운것이냐19', '1111', 0, '127.0.0.1', sysdate);
 insert into gil values (gil_seq.nextval, '최길동', '질문입니다20.', '왜이리시끄러운것이냐20', '1111', 0, '127.0.0.1', sysdate);
+
+select b.*
+		from
+			(select rownum as rn, a.* 
+			from(
+				(select *
+				from gil
+				order by gil_no desc)) a ) b
+		where rn between 1 and 3;

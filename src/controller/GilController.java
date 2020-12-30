@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import command.GilBBSListCommand;
 import command.GilCommand;
 import common.PathNRedirect;
 
@@ -34,7 +35,8 @@ public class GilController extends HttpServlet {
 		
 		// 커맨드
 		case "/GilBBSListPage.gil":
-			
+			command = new GilBBSListCommand();
+			pathNRedirect = command.execute(request, response);
 			break;
 		
 		// 이동
