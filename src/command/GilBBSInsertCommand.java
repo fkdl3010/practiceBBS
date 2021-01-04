@@ -9,7 +9,13 @@ public class GilBBSInsertCommand implements GilCommand {
 
 	@Override
 	public PathNRedirect execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+
+		String gil_writer = request.getParameter("gil_writer");
+		String gil_title = request.getParameter("gil_title");
+		String gil_content = request.getParameter("gli_content");
+		
+		
+		
 		return null;
 	}
 
