@@ -32,7 +32,7 @@
 					<tr>
 						<td>${pageVo.totalRecord - ((pageVo.page - 1) * pageVo.recordPerPage + k.index)}</td>
 						<td>${gilDto.gil_writer }</td>
-						<td>${gilDto.gil_title }</td>
+						<td><a href="/WebExer/gilListView.gil?gil_no">${gilDto.gil_title }</a></td>
 						<td>${gilDto.gil_content }</td>
 						<td>${gilDto.gil_ip }</td>
 						<td>${gilDto.gil_date }</td>
@@ -71,5 +71,12 @@
 		</tfoot>
 	</table>
 	
+	<form>
+		<input type="button" value="게시글 작성하기" onclick="/WebExer/GilBBSInsertPage.gil" />
+		
+		<!-- hidden -->
+		<input type="hidden" name="page" value="${page }" />
+		
+	</form>
 </body>
 </html>

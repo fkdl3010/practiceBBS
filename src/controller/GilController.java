@@ -38,8 +38,18 @@ public class GilController extends HttpServlet {
 			command = new GilBBSListCommand();
 			pathNRedirect = command.execute(request, response);
 			break;
+			
+		case "/gilListView.gil":
+			
+			break;
 		
 		// 이동
+			
+		case "/GilBBSInsertPage.gil":
+			pathNRedirect = new PathNRedirect();
+			pathNRedirect.setPath("gilbbs/gilbbsInsertPage.jsp");
+			pathNRedirect.setRedirect(false);
+			break;
 		}
 		
 		if(pathNRedirect.isRedirect()) {
