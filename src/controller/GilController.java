@@ -42,7 +42,11 @@ public class GilController extends HttpServlet {
 		case "/gilListView.gil":
 			
 			break;
-		
+			
+		case "/GilBBSInsert.gil":
+			
+			pathNRedirect = command.execute(request, response);
+			break;
 		// 이동
 			
 		case "/GilBBSInsertPage.gil":
