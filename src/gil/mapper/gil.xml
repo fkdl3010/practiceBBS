@@ -20,4 +20,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*)
 		from gil
 	</select>
+	
+	<insert id="gilBBSInsert" parameterType="dto.GilDto">
+		insert into gil
+		values(gil_seq.nextval,#{gil_writer},#{gil_title},#{gil_content},#{gil_pw},0,#{gil_ip},sysdate)
+	</insert>
 </mapper>

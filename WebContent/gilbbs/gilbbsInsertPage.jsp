@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function fn_bbsInsert(f){
-		if(f.gil_writer == '' || f.gil_title == '' || f.gil_pw == ''){
+		if(f.gil_writer.value == '' || f.gil_title.value == '' || f.gil_pw.value == ''){
 			alert('필수 입력사항입니다.');
 			return;
 		}
 		
-		f.action='/WebExer/GilBBSInsert.gil';
+		f.action='/WebExer/GilBBSInsert.gil?page=${param.page}';
 		f.submit();
 		
 	}

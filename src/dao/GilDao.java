@@ -42,4 +42,16 @@ public class GilDao {
 		return count;
 	}
 	
+	public int gilBBSInsert(GilDto gilDto) {
+		SqlSession ss = factory.openSession(false);
+		int result = ss.insert("gil.mapper.gil.gilBBSInsert",gilDto);
+		
+		if(result > 0) {
+			ss.commit();
+		}
+		ss.close();
+		
+		return result;
+	}
+	
 }

@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
 	<table border="1">
 		<thead>
 			<tr>
@@ -53,9 +52,11 @@
 					<c:forEach var="page" begin="${pageVo.beginPage }" end="${pageVo.endPage }" step="1" >
 						<c:if test="${page eq pageVo.page}">
 							${page }
+							<c:set var="page" value="${page }" scope="request"/>
 						</c:if>
 						<c:if test="${page ne pageVo.page }">
 							<a href="/WebExer/GilBBSListPage.gil?page=${page }">${page }</a>
+							
 						</c:if>
 					</c:forEach>
 					
@@ -72,7 +73,7 @@
 	</table>
 	
 	<form>
-		<input type="button" value="게시글 작성하기" onclick="/WebExer/GilBBSInsertPage.gil" />
+		<input type="button" value="게시글 작성하기" onclick="location.href='/WebExer/GilBBSInsertPage.gil?page=${page}'" />
 		
 		<!-- hidden -->
 		<input type="hidden" name="page" value="${page }" />
